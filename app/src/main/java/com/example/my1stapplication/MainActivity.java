@@ -19,8 +19,12 @@ public class MainActivity extends AppCompatActivity {
     public void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText1 = (EditText) findViewById(R.id.editTextTextPersonName);
-        EditText editText2 = (EditText) findViewById(R.id.editTextTextPersonName2);
-        String message = editText1.getText().toString() + " " + editText2.getText().toString();
+        EditText editText2 = (EditText) findViewById(R.id.editTextTextPersonSurname);
+
+        String name = editText1.getText().toString();
+        String surname = editText2.getText().toString();
+
+        String message = name + " " + surname;
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
